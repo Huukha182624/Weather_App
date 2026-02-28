@@ -7,58 +7,66 @@ export default function WeatherCard({ data }: any) {
     const desc = data.weather?.[0]?.main;
 
     const iconMap: any = {
-        Clear: require("../assets/sun.png"),
-        Clouds: require("../assets/cloud.png"),
+        Clear: require("../assets/sun.webp"),
+        Clouds: require("../assets/cloud.webp"),
         Rain: require("../assets/rain.png"),
         Snow: require("../assets/snow.png"),
     };
 
-
     return (
         <Pressable
             style={styles.card}
-            onPress={() => router.push({ pathname: "/detail", params: { city: data.name } })}
+            onPress={() =>
+                router.push({ pathname: "/detail", params: { city: data.name } })
+            }
         >
             <Text style={styles.city}>{data.name}</Text>
 
             <Image
-                source={iconMap[data.main] || iconMap.Clouds}
+                source={iconMap[desc] || iconMap.Clouds}
                 style={{ width: 60, height: 60 }}
             />
 
             <Text style={styles.temp}>{Math.round(data.main.temp)}°C</Text>
-
             <Text style={styles.desc}>{desc}</Text>
         </Pressable>
     );
 }
-
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: "#fff",
-        borderRadius: 16,
-        padding: 16,
-        marginTop: 20,
+        borderRadius: 28,
+        padding: 24,
+        marginTop: 30,
         alignItems: "center",
-        elevation: 4,
+
+        // Glass effect
+        backgroundColor: "rgba(255,255,255,0.18)",
+        borderWidth: 1,
+        borderColor: "rgba(255,255,255,0.35)",
+
+        // Shadow
+        shadowColor: "#000",
+        shadowOpacity: 0.25,
+        shadowOffset: { width: 0, height: 10 },
+        shadowRadius: 20,
+        elevation: 10,
     },
 
     city: {
-        fontSize: 20,
-        fontWeight: "600",
-    },
-
-    icon: {
-        width: 80,
-        height: 80,
+        fontSize: 22,
+        fontWeight: "700",
+        color: "#fff",
     },
 
     temp: {
-        fontSize: 32,
+        fontSize: 42,
         fontWeight: "bold",
+        color: "#fff",
+        marginVertical: 6,
     },
 
     desc: {
-        color: "#666",
+        color: "rgba(255,255,255,0.85)",
+        textTransform: "capitalize",
     },
 });
