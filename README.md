@@ -33,4 +33,3 @@ This app allows users to search for a city and view real-time weather informatio
 
 ### 📄 Detail Screen
 ![Detail Screen](./assets/demo/demo-detail.png)
-
