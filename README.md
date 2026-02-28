@@ -29,8 +29,8 @@ This app allows users to search for a city and view real-time weather informatio
 ## 📸 Demo Screenshots
 
 ### 🏠 Home Screen
-![Home Screen](./weatherApp/assets/demo/demo-home.png)
+![Home Screen](./assets/demo/demo-home.png)
 
 ### 📄 Detail Screen
 
-![Detail Screen](./weatherApp/assets/demo/demo-detail.png)
+![Detail Screen](./assets/demo/demo-detail.png)
